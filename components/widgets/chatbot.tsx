@@ -225,9 +225,12 @@ export function ChatbotWidget() {
         }),
       });
 
-      if (!response.ok) throw new Error('API error');
-
       const data = await response.json();
+
+      if (!response.ok) {
+        console.error('Chat API error response:', data);
+        throw new Error(data.reply || `HTTP ${response.status}`);
+      }
 
       const botMsg: Message = {
         id: (Date.now() + 1).toString(),

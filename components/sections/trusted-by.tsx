@@ -2,7 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { TRUSTED_BY } from '@/lib/constants';
-import { Building2, GraduationCap, Heart, Scale, ShoppingBag, Cpu, Home, BookOpen } from 'lucide-react';
+import {
+  Building2,
+  GraduationCap,
+  Heart,
+  Scale,
+  ShoppingBag,
+  Cpu,
+  Home,
+  BookOpen,
+} from 'lucide-react';
 
 const industryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   Education: GraduationCap,
@@ -12,45 +21,38 @@ const industryIcons: Record<string, React.ComponentType<{ className?: string }>>
   Retail: ShoppingBag,
   Technology: Cpu,
   'Real Estate': Home,
+  Coaching: BookOpen,
 };
+
+const ITEMS = TRUSTED_BY.map((company) => ({
+  ...company,
+  Icon: industryIcons[company.industry] || Building2,
+}));
 
 export function TrustedBy() {
   return (
-    <section className="py-16 border-y border-white/5">
-      <div className="container-max px-4 md:px-8">
-        <motion.p
-          className="text-center text-sm text-text-muted mb-8 tracking-wider uppercase"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Trusted by Industry Leaders Across Sectors
-        </motion.p>
+    <section className="py-14 border-y border-white/5 overflow-hidden" aria-label="Trusted by businesses">
+      <motion.p
+        className="text-center text-sm text-text-muted mb-10 tracking-widest uppercase font-medium"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Trusted by 200+ innovative businesses
+      </motion.p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center justify-items-center">
-          {TRUSTED_BY.map((company, index) => {
-            const Icon = industryIcons[company.industry] || Building2;
-            return (
-              <motion.div
-                key={company.name}
-                className="flex flex-col items-center gap-2 text-center group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="h-12 w-12 rounded-xl glass flex items-center justify-center group-hover:border-brand-purple/30 transition-colors">
-                  <Icon className="h-5 w-5 text-text-muted group-hover:text-brand-purple transition-colors" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors">
-                    {company.name}
-                  </p>
-                  <p className="text-[10px] text-text-muted">{company.industry}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+      <div className="relative w-full overflow-hidden mask-fade-x" aria-hidden="true">
+        <div className="marquee-track">
+          {[...ITEMS, ...ITEMS].map((item, i) => (
+            <div
+              key={`${item.name}-${i}`}
+              className="flex flex-shrink-0 items-center gap-2.5 px-8 text-lg font-semibold text-text-muted/40 transition-colors hover:text-text-secondary"
+            >
+              <item.Icon className="h-6 w-6" />
+              {item.name}
+            </div>
+          ))}
         </div>
       </div>
     </section>

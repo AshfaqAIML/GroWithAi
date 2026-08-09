@@ -46,6 +46,9 @@ const config: Config = {
         'scale-in': 'scale-in 0.4s ease-out forwards',
         'shimmer': 'shimmer 2s linear infinite',
         'glow': 'glow 3s ease-in-out infinite alternate',
+        'ring-pulse': 'ring-pulse 6s ease-in-out infinite',
+        'marquee': 'marquee 30s linear infinite',
+        'bounce-scroll': 'bounce-scroll 1.5s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -79,6 +82,18 @@ const config: Config = {
         glow: {
           '0%': { boxShadow: '0 0 20px rgba(108, 59, 255, 0.3)' },
           '100%': { boxShadow: '0 0 40px rgba(108, 59, 255, 0.6)' },
+        },
+        'ring-pulse': {
+          '0%, 100%': { opacity: '0.12', transform: 'scale(1)' },
+          '50%': { opacity: '0.28', transform: 'scale(1.05)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'bounce-scroll': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(6px)' },
         },
       },
       backdropBlur: {

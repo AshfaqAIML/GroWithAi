@@ -1,9 +1,10 @@
 import { Hero } from '@/components/sections/hero';
 import { TrustedBy } from '@/components/sections/trusted-by';
+import { Outcomes } from '@/components/sections/outcomes';
 import { BusinessChallenges } from '@/components/sections/business-challenges';
 import { AISolutions } from '@/components/sections/ai-solutions';
-import { Industries } from '@/components/sections/industries';
 import { ROICalculator } from '@/components/sections/roi-calculator';
+import { Industries } from '@/components/sections/industries';
 import { HowItWorks } from '@/components/sections/how-it-works';
 import { WhyGroWithAI } from '@/components/sections/why-growithai';
 import { PricingSection } from '@/components/sections/pricing';
@@ -19,10 +20,11 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustedBy />
+      <Outcomes />
       <BusinessChallenges />
       <AISolutions />
-      <Industries />
       <ROICalculator />
+      <Industries />
       <HowItWorks />
       <WhyGroWithAI />
       <PricingSection />

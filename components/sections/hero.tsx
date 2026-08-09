@@ -11,6 +11,16 @@ import { cn } from '@/lib/utils';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      {/* Grid background */}
+      <div className="absolute inset-0 grid-bg z-0" aria-hidden="true" />
+
+      {/* Concentric rings */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+        <div className="h-[620px] w-[620px] rounded-full border border-brand-purple/[0.07] animate-ring-pulse" />
+        <div className="absolute h-[440px] w-[440px] rounded-full border border-brand-purple/[0.1] animate-ring-pulse [animation-delay:1s]" />
+        <div className="absolute h-[260px] w-[260px] rounded-full border border-brand-purple/[0.12] animate-ring-pulse [animation-delay:2s]" />
+      </div>
+
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-purple/20 rounded-full blur-[120px] animate-float" />

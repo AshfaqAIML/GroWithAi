@@ -21,6 +21,7 @@ export interface Industry {
   description: string;
   benefits: string[];
   href: string;
+  image: string;
 }
 
 export interface CaseStudy {

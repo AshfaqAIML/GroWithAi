@@ -151,6 +151,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'AI-powered student engagement, automated admissions, and 24/7 campus support.',
     benefits: ['Automated admissions', 'Student support bots', 'Personalized learning'],
     href: '/industries/education',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=900&auto=format&fit=crop',
   },
   {
     id: 'hospitality',
@@ -159,6 +160,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'Intelligent booking systems, AI concierge, and personalized guest experiences.',
     benefits: ['AI concierge', 'Smart bookings', 'Guest personalization'],
     href: '/industries/hospitality',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=900&auto=format&fit=crop',
   },
   {
     id: 'healthcare',
@@ -167,6 +169,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'AI appointment scheduling, patient triage, and automated follow-up systems.',
     benefits: ['Smart scheduling', 'Patient triage', 'Automated follow-ups'],
     href: '/industries/healthcare',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=900&auto=format&fit=crop',
   },
   {
     id: 'professional-services',
@@ -175,6 +178,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'Intelligent document processing, client intake automation, and AI research assistants.',
     benefits: ['Document automation', 'Client intake AI', 'Research assistance'],
     href: '/industries/professional-services',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=900&auto=format&fit=crop',
   },
   {
     id: 'commerce',
@@ -183,6 +187,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'AI product recommendations, inventory intelligence, and automated customer service.',
     benefits: ['Smart recommendations', 'Inventory AI', 'Customer service bots'],
     href: '/industries/commerce',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=900&auto=format&fit=crop',
   },
   {
     id: 'real-estate',
@@ -191,6 +196,7 @@ export const INDUSTRIES: Industry[] = [
     description: 'AI property matching, automated lead nurturing, and virtual property tours.',
     benefits: ['Property matching AI', 'Lead nurturing', 'Virtual tours'],
     href: '/industries/real-estate',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=900&auto=format&fit=crop',
   },
 ];
 
@@ -271,28 +277,53 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     id: 'faq-2',
-    question: 'How long does it take to deploy an AI solution?',
-    answer: 'Most solutions go live within 2-4 weeks. Simple chatbots can be deployed in as little as 7 days. Enterprise-grade custom AI systems typically take 6-8 weeks. We prioritize rapid deployment without compromising on quality or reliability.',
+    question: 'How is GroWithAI different from a marketing agency?',
+    answer: 'We\'re not a marketing agency. We\'re an AI technology company. While agencies focus on campaigns, we build proprietary AI systems — chatbots, voice agents, automation pipelines, analytics platforms — that become permanent growth engines for your business.',
   },
   {
     id: 'faq-3',
-    question: 'Do I need technical expertise to use GroWithAI solutions?',
-    answer: 'Not at all. Our solutions are designed with business users in mind. We handle all the technical complexity — you get a simple, intuitive interface. Plus, we provide comprehensive training and ongoing support to ensure your team feels confident from day one.',
+    question: 'How long does it take to deploy and see results?',
+    answer: 'Most solutions go live within 2-4 weeks — simple chatbots can be deployed in as little as 7 days. Clients typically see initial results within the first 2-4 weeks of deployment, with significant growth metrics appearing within 3 months. The timeline depends on your business complexity.',
   },
   {
     id: 'faq-4',
-    question: 'How do you ensure data security and privacy?',
-    answer: 'Security is foundational to everything we build. We use enterprise-grade encryption, follow SOC 2 best practices, comply with GDPR and India\'s DPDP Act, and ensure all data is stored securely. We never train AI models on your proprietary business data.',
+    question: 'Do I need technical knowledge to work with you?',
+    answer: 'Not at all. Our solutions are designed with business users in mind. We handle all the technical complexity — you get a simple, intuitive interface. Plus, we provide comprehensive training and ongoing support so your team feels confident from day one.',
   },
   {
     id: 'faq-5',
+    question: 'How much does it cost?',
+    answer: 'Pricing is simple and transparent. Plans start at ₹25,000/month for a single AI solution and scale with your needs — Growth plans at ₹75,000/month include 3 solutions, and Enterprise plans are custom-built. Every plan includes a 14-day free trial, so you can see results before committing.',
+  },
+  {
+    id: 'faq-6',
     question: 'What kind of ROI can I expect?',
     answer: 'Our clients typically see ROI within the first 30-60 days. On average, businesses experience 30-40% cost reduction in automated processes, 3x faster response times, and significant revenue uplift from improved customer engagement. We track and report all metrics transparently.',
   },
   {
-    id: 'faq-6',
+    id: 'faq-7',
+    question: 'What industries do you serve?',
+    answer: 'We serve education, hospitality, healthcare, professional services, retail & e-commerce, real estate, and startups. Our AI solutions are modular and adaptable, so we can serve virtually any industry. If you don\'t see your sector, let\'s talk — we build custom solutions for any business.',
+  },
+  {
+    id: 'faq-8',
+    question: 'Do you provide ongoing support?',
+    answer: 'Absolutely. We believe in long-term partnerships, not one-time projects. Every engagement includes ongoing optimization, monitoring, and support to ensure your AI systems continue to deliver results as your business grows.',
+  },
+  {
+    id: 'faq-9',
+    question: 'How do you ensure data security and privacy?',
+    answer: 'Security is foundational to everything we build. We use enterprise-grade encryption, follow SOC 2 best practices, comply with GDPR and India\'s DPDP Act, and ensure all data is stored securely. We never train AI models on your proprietary business data.',
+  },
+  {
+    id: 'faq-10',
     question: 'Can GroWithAI integrate with our existing software?',
     answer: 'Absolutely. We specialize in seamless integrations with CRMs (Salesforce, HubSpot, Zoho), ERPs, help desks, WhatsApp Business API, and virtually any system with an API. Our team handles the entire integration process end-to-end.',
+  },
+  {
+    id: 'faq-11',
+    question: 'Can I see demos or case studies?',
+    answer: 'Yes! We have detailed case studies showing real results from real businesses — including response times under 30 seconds, 80% reduction in no-shows, and ₹42L in recovered annual revenue. Book a free consultation and we\'ll walk you through relevant examples from your industry.',
   },
 ];
 

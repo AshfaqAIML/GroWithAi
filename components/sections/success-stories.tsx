@@ -17,11 +17,11 @@ export function SuccessStories() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight">
-            <span className="gradient-text">Success Stories</span> That Speak
-            for Themselves
+            Results That{' '}
+            <span className="gradient-text">Speak for Themselves</span>
           </h2>
           <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-            Real results from businesses that grew with AI.
+            Real businesses. Real outcomes. Measurable impact across every metric.
           </p>
         </motion.div>
 
@@ -59,8 +59,8 @@ export function SuccessStories() {
               <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/5">
                 {study.results.map((result) => (
                   <div key={result.label} className="text-center">
-                    <div className="text-lg font-bold text-brand-purple">
-                      <AnimatedCounter value={result.value} />
+                    <div className="text-lg font-bold text-brand-purple leading-tight">
+                      <AnimatedCounter value={result.value} className="text-lg md:text-xl" />
                     </div>
                     <p className="text-[10px] text-text-muted leading-tight mt-1">
                       {result.label}

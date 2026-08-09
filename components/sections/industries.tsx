@@ -2,18 +2,10 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, GraduationCap, UtensilsCrossed, HeartPulse, Briefcase, ShoppingCart, Building2, type LucideIcon } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { INDUSTRIES } from '@/lib/constants';
 import { getStaggerDelay } from '@/lib/utils';
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  GraduationCap,
-  UtensilsCrossed,
-  HeartPulse,
-  Briefcase,
-  ShoppingCart,
-  Building2,
-};
 
 export function Industries() {
   return (
@@ -27,33 +19,46 @@ export function Industries() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight">
-            <span className="gradient-text">Industries</span> We Transform
+            Tailored AI for{' '}
+            <span className="gradient-text">Your Industry</span>
           </h2>
           <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-            Purpose-built AI solutions for the unique challenges of your industry.
+            We understand the nuances of your sector. Purpose-built AI solutions for
+            the unique challenges of your industry.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {INDUSTRIES.map((industry, index) => {
-            const IconComponent = ICON_MAP[industry.icon];
-            return (
-              <motion.div
-                key={industry.id}
-                className="group glass-card rounded-2xl p-6"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: getStaggerDelay(index, 0.08), duration: 0.5 }}
-              >
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-brand-purple/20 to-brand-blue/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <IconComponent className="h-7 w-7 text-brand-purple" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {INDUSTRIES.map((industry, index) => (
+            <motion.div
+              key={industry.id}
+              className="group relative overflow-hidden rounded-3xl border border-white/5 bg-surface-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: getStaggerDelay(index, 0.08), duration: 0.5 }}
+            >
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={industry.image}
+                  alt={`${industry.title} — AI solutions by GroWithAI`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-surface-card/40 to-transparent" />
+                <div className="absolute top-4 left-4 h-11 w-11 rounded-xl bg-gradient-to-br from-brand-purple to-brand-deep-purple flex items-center justify-center shadow-lg shadow-brand-purple/30">
+                  <span className="text-white text-xl font-bold">
+                    {industry.title.charAt(0)}
+                  </span>
                 </div>
+              </div>
 
+              <div className="p-6 -mt-8 relative">
                 <h3 className="font-semibold text-xl mb-2">{industry.title}</h3>
                 <p className="text-sm text-text-secondary mb-4">{industry.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {industry.benefits.map((benefit) => (
                     <span
                       key={benefit}
@@ -71,13 +76,13 @@ export function Industries() {
                   Explore solutions
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <motion.p
-          className="text-center mt-8 text-sm text-text-muted"
+          className="text-center mt-10 text-sm text-text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
